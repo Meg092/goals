@@ -6,8 +6,11 @@ import 'package:set_goals/pages/goals_break/goals_break_binding.dart';
 import 'package:set_goals/pages/goals_break/goals_break_view.dart';
 import 'package:set_goals/pages/goals_details/goals_details_binding.dart';
 import 'package:set_goals/pages/goals_details/goals_details_view.dart';
+import 'package:set_goals/pages/goals_focus/goals_focus_binding.dart';
+import 'package:set_goals/pages/goals_focus/goals_focus_view.dart';
 import 'package:set_goals/pages/goals_main/goals_main_binding.dart';
 import 'package:set_goals/pages/goals_main/goals_main_view.dart';
+import 'package:set_goals/pages/goals_main/goals_main_zip.dart';
 import 'package:set_goals/pages/goals_setting/goals_setting_binding.dart';
 import 'package:set_goals/pages/goals_setting/goals_setting_view.dart';
 
@@ -32,7 +35,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Goals,
-      initialRoute: '/goals_main',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -85,7 +88,9 @@ class MyApp extends StatelessWidget {
 }
 
 List<GetPage<dynamic>> Goals = [
+  GetPage(name: '/', page: () => const GoalsFocusView(), binding: GoalsFocusBinding()),
   GetPage(name: '/goals_main', page: () => const GoalsMainPage(), binding: GoalsMainBinding()),
+  GetPage(name: '/goals_zp', page: () => GoalsMainZip()),
   GetPage(name: '/goals_setting', page: () => GoalsSettingPage(), binding: GoalsSettingBinding()),
   GetPage(name: '/goals_break', page: () => GoalsBreakView(), binding: GoalsBreakBinding()),
   GetPage(name: '/goals_details', page: () => GoalsDetailsPage(), binding: GoalsDetailsBinding()),

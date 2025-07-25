@@ -11,8 +11,8 @@ class GoalsFocusView extends GetView<GoalsFocusLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.larkin.value
-              ? const CircularProgressIndicator(color: Colors.blueAccent)
+          () => controller.larson.value
+              ? const CircularProgressIndicator(color: Colors.orange)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class GoalsFocusView extends GetView<GoalsFocusLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.ycmkqbdn();
+              controller.vgiqycke();
             },
             icon: const Icon(
               Icons.restart_alt,

